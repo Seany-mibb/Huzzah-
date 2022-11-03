@@ -15,13 +15,12 @@ const firebaseConfig = {
 
     user_name = localStorage.getItem("user_name");
     document.getElementById("login").play();
-    document.getElementById("user_name").innerHTML = "&#128526;"+"Welcome " + user_name + "&#128526;";
+    document.getElementById("user_name").innerHTML = "🦫"+"Welcome " + user_name + '🦫';
 
 
       function addRoom()
 {
       room_name = document.getElementById("room_name").value;
-      
       firebase.database().ref("/").child(room_name).update({
             purpose: "adding room name"
       });
@@ -56,5 +55,44 @@ function logout()
             localStorage.removeItem("user_name");
             localStorage.removeItem("room_name");
             window.location = "index.html"
-      }, 1000);
+      }, 500);
+}
+
+
+function createCode()
+{
+      digit1 = Math.random();
+      digit1 = digit1*10
+      digit1 = Math.floor(digit1)
+      digit1.toString();
+
+      digit2 = Math.random();
+      digit2 = digit1*10
+      digit2 = Math.floor(digit1)
+      digit2.toString();
+
+      digit3 = Math.random();
+      digit3 = digit1*10
+      digit3 = Math.floor(digit1)
+      digit3.toString();
+
+      digit4 = Math.random();
+      digit4 = digit1*10
+      digit4 = Math.floor(digit1)
+      digit4.toString();
+
+      digit5 = Math.random();
+      digit5 = digit1*10
+      digit5 = Math.floor(digit1)
+      digit5.toString();
+
+      code = digit1+digit2+digit3+digit4+digit5
+      code *= 1.5
+      console.log(code)
+      
+      document.getElementById("private_code").innerHTML = 'This is your code: ' + code;
+      document.getElementById("login").play();
+      setTimeout(()=>{
+            document.getElementById('private_code').innerHTML = '#Create Private Room Number Code';
+      }, 3000)
 }

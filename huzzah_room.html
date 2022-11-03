@@ -22,7 +22,7 @@
 	<audio src="logout.mp3" id = "logout"></audio>
 <div class="container">
 <button onclick = "logout();"id="logout" class="glyphicon glyphicon-log-out btn-grad3">Logout</button>
-	<center>
+	<center style = 'font-family: Segoe UI'>
 		<h1 class="header">	
 			Huzzah	
 			<sup>
@@ -30,13 +30,23 @@
 			</sup>
 		</h1>
 		<h3 id = "user_name" class="color_white"></h3>
-		<div class="form-group input_div_room_page">
-			<label>#Add Room:</label>
-			<input type = "text" id = "room_name" class = "form-control" placeholder = "#RoomName">
+		<div id  = 'font'>
+			<div class="form-group input_div_room_page">
+				<label>#Add Room:</label>
+				<input style = 'width: 200px'type = "text" id = "room_name" class = "form-control" placeholder = "Enter Room Name Here🦫">
+				<br>
+				<br>
+				<label>#Private Room Code:</label>
+				<input style="width:400px" type="password" id="private_code_input" class="form-control" placeholder="Enter Number Code Here🦫">
+			</div>
+			<span>
+				<button onclick = "addRoom();" class="btn-grad2">#Add Room</button>
+			</span>
+			<button id = 'private_code'onclick = "createCode();" class="btn-grad4">#Create Private Room Number Code</button>
 		</div>
-		<button onclick = "addRoom();" class="btn-grad2">#Add Room</button>
 		<h3 class="color_white">#TRENDING ROOMS</h3>
 		<div id = "output"></div>
+		<h4 id = 'fat'>
 	</center>
 </div>
 <script src="huzzah_room.js"></script>

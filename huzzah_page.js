@@ -46,8 +46,8 @@ function logout()
       setTimeout(()=>{
             localStorage.removeItem("user_name");
             localStorage.removeItem("room_name");
-            window.location = "index.html"
-      }, 2000);
+            window.location = "huzzah_room.html"
+      }, 500);
 }
 
 
